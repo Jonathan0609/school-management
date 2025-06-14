@@ -8,16 +8,13 @@ import '@mantine/dropzone/styles.css';
 
 import { Montserrat } from 'next/font/google';
 
-import {
-  ColorSchemeScript,
-  MantineProvider,
-  mantineHtmlProps,
-} from '@mantine/core';
+import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import { ModalsProvider } from '@mantine/modals';
 import { Notifications } from '@mantine/notifications';
 import RootProvider from '@/components/Layout/RootProvider';
 import { theme } from '@/core/config/mantine/theme';
 import { DatesProvider } from '@mantine/dates';
+import { mantineResolver } from '@/core/config/mantine/mantine.resolver';
 
 export const metadata = {
   title: 'Gestão de escola',
@@ -31,13 +28,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-br" {...mantineHtmlProps}>
+    <html lang="pt-br" suppressHydrationWarning>
       <head>
-        <ColorSchemeScript />
+        <ColorSchemeScript defaultColorScheme="auto" />
       </head>
 
       <body className={montserrat.className}>
-        <MantineProvider theme={theme}>
+        <MantineProvider
+          defaultColorScheme="auto"
+          theme={theme}
+          cssVariablesResolver={mantineResolver}
+        >
           <Notifications position="bottom-center" />
 
           <DatesProvider settings={{ locale: 'pt-BR', firstDayOfWeek: 0 }}>
@@ -50,4 +51,3 @@ export default function RootLayout({
     </html>
   );
 }
-
