@@ -52,6 +52,7 @@ const variantColorResolver: VariantColorsResolver = (input) => {
 };
 
 export const theme = createTheme({
+  fontFamily: 'Montserrat, Montserrat Fallback',
   primaryColor: 'primary',
   colors: {
     primary: [
