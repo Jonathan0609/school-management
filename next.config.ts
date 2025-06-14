@@ -5,10 +5,10 @@ const nextConfig: NextConfig = {
     optimizePackageImports: [
       '@mantine/charts',
       '@mantine/core',
-      '@mantine/dates',
       '@mantine/dropzone',
       '@mantine/form',
       '@mantine/hooks',
+      '@mantine/core',
       '@mantine/modals',
       '@mantine/notifications',
       '@tabler/icons-react',
