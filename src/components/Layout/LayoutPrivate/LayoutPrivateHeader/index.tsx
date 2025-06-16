@@ -9,7 +9,6 @@ import {
   ActionIcon,
 } from '@mantine/core';
 import { IconMoon, IconSun } from '@tabler/icons-react';
-import { useState, useEffect, useMemo } from 'react';
 
 interface Props {
   opened: boolean;
@@ -18,11 +17,8 @@ interface Props {
 
 export default function LayoutPrivateHeader(props: Props) {
   const { colorScheme, setColorScheme } = useMantineColorScheme();
-  const [mounted, setMounted] = useState(false);
 
-  useEffect(() => setMounted(true), []);
-
-  const isDark = useMemo(() => colorScheme === 'dark', [colorScheme]);
+  const isDark = colorScheme === 'dark';
 
   return (
     <AppShellHeader p="lg">
@@ -42,15 +38,13 @@ export default function LayoutPrivateHeader(props: Props) {
 
         <GridCol span="content" p={0}>
           <Group w="100%" gap="md" align="center">
-            {mounted && (
-              <ActionIcon
-                onClick={() => setColorScheme(isDark ? 'light' : 'dark')}
-                variant="transparent"
-                size="sm"
-              >
-                {!isDark ? <IconMoon /> : <IconSun />}
-              </ActionIcon>
-            )}
+            <ActionIcon
+              onClick={() => setColorScheme(isDark ? 'light' : 'dark')}
+              variant="transparent"
+              size="sm"
+            >
+              {!isDark ? <IconMoon /> : <IconSun />}
+            </ActionIcon>
 
             <Avatar size="md" name="Jonathan Cristian" color="initials" />
           </Group>

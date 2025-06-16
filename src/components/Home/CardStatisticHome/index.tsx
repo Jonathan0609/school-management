@@ -49,6 +49,7 @@ export default function CardStatisticHome(props: Props) {
               multiline
               w={220}
               transitionProps={{ transition: 'skew-down', duration: 500 }}
+              events={{ hover: true, focus: false, touch: true }}
             >
               <IconInfoCircle size={18} cursor="pointer" />
             </Tooltip>

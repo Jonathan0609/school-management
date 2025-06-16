@@ -16,6 +16,8 @@ import { routes } from '@/core/constants/routes';
 import { usePathname } from 'next/navigation';
 import LayoutPrivateHeader from '@/components/Layout/LayoutPrivate/LayoutPrivateHeader';
 
+import classes from './styles.module.css';
+
 export default function LayoutPrivate({ children }: { children: ReactNode }) {
   const [opened, { toggle }] = useDisclosure();
 
@@ -55,12 +57,7 @@ export default function LayoutPrivate({ children }: { children: ReactNode }) {
         </Stack>
       </AppShellNavbar>
 
-      <AppShellMain
-        bg="light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-8))"
-        style={{ overflow: 'hidden', height: 'calc(100vh - 60px)', flex: 1 }}
-      >
-        {children}
-      </AppShellMain>
+      <AppShellMain className={classes.main}>{children}</AppShellMain>
     </AppShell>
   );
 }

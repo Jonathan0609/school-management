@@ -19,10 +19,11 @@ export default function CardChart(props: Props) {
 
           <Tooltip
             label={props.contentInfo}
-            color="blue"
+            color="primary"
             multiline
             w={220}
             transitionProps={{ transition: 'skew-down', duration: 400 }}
+            events={{ hover: true, focus: false, touch: true }}
           >
             <IconInfoCircle size={18} cursor="pointer" />
           </Tooltip>
