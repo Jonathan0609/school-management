@@ -31,7 +31,12 @@ export default function EmployeesDocumentsForm() {
         onDrop={(files) => setFiles((prev) => [...prev, ...files])}
         maxSize={5 * 1024 ** 2}
       >
-        <Group justify="center" gap="md" style={{ pointerEvents: 'none' }}>
+        <Group
+          justify="center"
+          gap="md"
+          style={{ pointerEvents: 'none' }}
+          wrap="nowrap"
+        >
           <DropzoneAccept>
             <IconUpload
               size={30}

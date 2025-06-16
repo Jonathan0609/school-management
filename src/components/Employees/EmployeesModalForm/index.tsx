@@ -42,7 +42,7 @@ export default function EmployeesModalForm(props: ModalProps) {
               </Text>
 
               <Grid gutter="xs">
-                <GridCol span={9}>
+                <GridCol span={{ base: 12, md: 9 }}>
                   <TextInput
                     withAsterisk
                     label="Nome completo"
@@ -52,17 +52,17 @@ export default function EmployeesModalForm(props: ModalProps) {
                   />
                 </GridCol>
 
-                <GridCol span={3}>
+                <GridCol span={{ base: 6, md: 3 }}>
                   <DateInput
                     withAsterisk
-                    label="Data de nascimento"
+                    label="Data de nasc."
                     placeholder="Informe uma data"
                     {...form.getInputProps('birthDate')}
                     key={form.key('birthDate')}
                   />
                 </GridCol>
 
-                <GridCol span={4}>
+                <GridCol span={{ base: 6, md: 4 }}>
                   <InputCpfCnpj
                     withAsterisk
                     label="CPF"
@@ -72,7 +72,7 @@ export default function EmployeesModalForm(props: ModalProps) {
                   />
                 </GridCol>
 
-                <GridCol span={4}>
+                <GridCol span={{ base: 6, md: 4 }}>
                   <InputPhone
                     withAsterisk
                     label="Celular/Telefone"
@@ -82,19 +82,9 @@ export default function EmployeesModalForm(props: ModalProps) {
                   />
                 </GridCol>
 
-                <GridCol span={4}>
-                  <TextInput
-                    label="Email"
-                    placeholder="exemplo@gmail.com"
-                    {...form.getInputProps('email')}
-                    key={form.key('email')}
-                  />
-                </GridCol>
-
-                <GridCol span={4}>
+                <GridCol span={{ base: 6, md: 4 }}>
                   <Select
                     label="Gênero"
-                    placeholder="Informe um gênero"
                     data={[
                       { label: 'Masculino', value: 'MALE' },
                       { label: 'Feminino', value: 'FEMALE' },
@@ -102,6 +92,15 @@ export default function EmployeesModalForm(props: ModalProps) {
                     ]}
                     {...form.getInputProps('gender')}
                     key={form.key('gender')}
+                  />
+                </GridCol>
+
+                <GridCol span={{ base: 12, md: 4 }}>
+                  <TextInput
+                    label="Email"
+                    placeholder="exemplo@gmail.com"
+                    {...form.getInputProps('email')}
+                    key={form.key('email')}
                   />
                 </GridCol>
               </Grid>
@@ -113,7 +112,7 @@ export default function EmployeesModalForm(props: ModalProps) {
               </Text>
 
               <Grid gutter="xs">
-                <GridCol span={4}>
+                <GridCol span={{ base: 6, md: 4 }}>
                   <Select
                     label="Função"
                     placeholder="Informe uma função"
@@ -159,7 +158,7 @@ export default function EmployeesModalForm(props: ModalProps) {
                   />
                 </GridCol>
 
-                <GridCol span={4}>
+                <GridCol span={{ base: 6, md: 4 }}>
                   <Select
                     label="Horário"
                     placeholder="Informe um horário"
