@@ -28,7 +28,7 @@ export default function LoginForm() {
 
         <Group justify="end">
           <Anchor
-            href="https://mantine.dev/"
+            href="forgot-password"
             underline="never"
             fw={600}
             fz="sm"
