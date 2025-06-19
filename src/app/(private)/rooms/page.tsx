@@ -2,13 +2,15 @@
 
 import BreadcrumbCommon from '@/components/_common/BreadcrumbCommon';
 import RoomsList from '@/components/Rooms/RoomsList';
+import RoomsModalForm from '@/components/Rooms/RoomsModalForm';
 import { Stack, Grid, GridCol, Text, Button } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
 import { IconPlus } from '@tabler/icons-react';
-import Link from 'next/link';
 
 export default function RoomsPage() {
+  const [createOpened, createActions] = useDisclosure();
   return (
-    <Stack p="md">
+    <>
       <Stack>
         <BreadcrumbCommon
           data={[
@@ -27,8 +29,7 @@ export default function RoomsPage() {
           <GridCol span="content">
             <Button
               leftSection={<IconPlus size={18} />}
-              component={Link}
-              href="/rooms/create"
+              onClick={createActions.open}
             >
               Cadastrar turma
             </Button>
@@ -37,6 +38,8 @@ export default function RoomsPage() {
 
         <RoomsList />
       </Stack>
-    </Stack>
+
+      <RoomsModalForm opened={createOpened} onClose={createActions.close} />
+    </>
   );
 }

@@ -31,8 +31,18 @@ export default function EmployeesModalForm(props: ModalProps) {
     console.log(values);
   };
 
+  const handleClose = () => {
+    form.reset();
+    props.onClose();
+  };
+
   return (
-    <Modal title="Cadastro de funcionário" size="xl" {...props}>
+    <Modal
+      {...props}
+      title="Cadastro de funcionário"
+      size="xl"
+      onClose={handleClose}
+    >
       <EmployeeFormProvider form={form}>
         <form onSubmit={form.onSubmit(handleSubmit)}>
           <Stack gap="md">
@@ -203,13 +213,7 @@ export default function EmployeesModalForm(props: ModalProps) {
 
             <Grid>
               <GridCol span="auto" mr="auto">
-                <Button
-                  onClick={() => {
-                    props.onClose();
-                    form.reset();
-                  }}
-                  variant="default"
-                >
+                <Button onClick={handleClose} variant="default">
                   Cancelar
                 </Button>
               </GridCol>
