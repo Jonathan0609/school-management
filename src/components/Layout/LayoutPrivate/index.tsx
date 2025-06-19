@@ -25,7 +25,7 @@ export default function LayoutPrivate({ children }: { children: ReactNode }) {
 
   return (
     <AppShell
-      padding={0}
+      padding="md"
       layout="alt"
       header={{ height: 60 }}
       navbar={{
