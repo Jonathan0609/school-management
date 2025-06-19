@@ -12,7 +12,7 @@ export default function RoomsPage() {
 
   return (
     <>
-      <Stack p="md">
+      <Stack>
         <Stack>
           <BreadcrumbCommon
             data={[

@@ -6,7 +6,7 @@ import RegistrationsLastMonthsChart from '@/components/Home/RegistrationsLastMon
 
 export default function HomePage() {
   return (
-    <Stack p="md" h="100%">
+    <Stack h="100%">
       <Grid>
         <GridCol span="auto">
           <Text fz="xl" fw={700}>

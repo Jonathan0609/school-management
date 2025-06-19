@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export default function StudentsPage() {
   return (
-    <Stack p="md">
+    <Stack>
       <Grid>
         <GridCol span="auto">
           <Stack>
